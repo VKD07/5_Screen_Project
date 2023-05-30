@@ -17,6 +17,9 @@ public class DisplaySettingsManager : MonoBehaviour
     [Header("Display Buttons")]
     [SerializeField] Button[] m_displaysAvailable;
 
+    [Header("Screen Displays")]
+    [SerializeField] GameObject[] m_screenDisplays; 
+
     private void Start()
     {
         BtnListener();
