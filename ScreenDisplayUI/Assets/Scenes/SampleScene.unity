@@ -599,7 +599,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396668136}
-  - component: {fileID: 396668137}
   m_Layer: 0
   m_Name: '[Manager]'
   m_TagString: Untagged
@@ -624,18 +623,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &396668137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396668134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc23d07a7c917e549a8f48cb10e09e32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &406774588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,10 +2763,12 @@ MonoBehaviour:
   m_selectDisplayBtn: {fileID: 1754128075}
   m_displaysAvailable:
   - {fileID: 1608464564}
-  - {fileID: 2050217925}
   - {fileID: 1788816093}
-  - {fileID: 1384963381}
   - {fileID: 2126904283}
+  m_btn43:
+  - {fileID: 1768597359}
+  - {fileID: 1234290425}
+  m_screenDisplays: []
 --- !u!1 &1158188204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2915,7 +2904,7 @@ GameObject:
   - component: {fileID: 1234290426}
   - component: {fileID: 1234290425}
   m_Layer: 5
-  m_Name: 16:9_btn
+  m_Name: 4:3_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4154,7 +4143,7 @@ GameObject:
   - component: {fileID: 1768597360}
   - component: {fileID: 1768597359}
   m_Layer: 5
-  m_Name: 16:9_btn
+  m_Name: 4:3_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
