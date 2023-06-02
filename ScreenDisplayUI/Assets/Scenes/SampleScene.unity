@@ -620,6 +620,7 @@ Transform:
   m_Children:
   - {fileID: 1241852925}
   - {fileID: 1131424173}
+  - {fileID: 964339611}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2127,6 +2128,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912215079}
   m_CullTransparentMesh: 1
+--- !u!1 &964339610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964339611}
+  - component: {fileID: 964339612}
+  m_Layer: 0
+  m_Name: BackBtn_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964339611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964339610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 396668136}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &964339612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964339610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81bc8348d3e8bc4d9c00d59244fac41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_displayPage: {fileID: 1789790055}
+  m_homePage: {fileID: 1506893867}
+  m_backBtn: {fileID: 1450392294}
 --- !u!1 &1022151179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,18 +2804,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560c369809cf48e4e98927822a35e00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_homePage: {fileID: 0}
-  m_displayPage: {fileID: 0}
-  m_backBtn: {fileID: 0}
   m_fullDisplayBtn: {fileID: 699442045}
   m_selectDisplayBtn: {fileID: 1754128075}
   m_displaysAvailable:
   - {fileID: 1608464564}
   - {fileID: 1788816093}
   - {fileID: 2126904283}
-  m_btn43:
+  m_btn4by3:
   - {fileID: 1768597359}
   - {fileID: 1234290425}
+  m_btn16by9: {fileID: 1026331023}
+  m_fullScreenBtns:
+  - {fileID: 1831265662}
+  - {fileID: 538848435}
+  - {fileID: 912215081}
   m_screenDisplays: []
 --- !u!1 &1158188204
 GameObject:
@@ -2904,7 +2954,7 @@ GameObject:
   - component: {fileID: 1234290426}
   - component: {fileID: 1234290425}
   m_Layer: 5
-  m_Name: 4:3_btn
+  m_Name: 4:3_btn (Left)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4143,7 +4193,7 @@ GameObject:
   - component: {fileID: 1768597360}
   - component: {fileID: 1768597359}
   m_Layer: 5
-  m_Name: 4:3_btn
+  m_Name: 4:3_btn (Right)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

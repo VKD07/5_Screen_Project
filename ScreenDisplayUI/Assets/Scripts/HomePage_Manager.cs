@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -35,6 +37,13 @@ public class HomePage_Manager : MonoBehaviour
 
     public void FileExplorerBtn()
     {
+        string downloadsPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/Documents";
+        string filePath = EditorUtility.OpenFilePanel("Open File", downloadsPath, "");
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            // Handle the selected file path
+            Debug.Log("Selected file: " + filePath);
+        }
 
     }
 }

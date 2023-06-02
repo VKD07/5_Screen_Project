@@ -7,11 +7,6 @@ using UnityEngine.UI;
 
 public class DisplaySettingsManager : MonoBehaviour
 {
-    [Header("GameObjects Activated/Deactived")]
-    [SerializeField] GameObject m_homePage;
-    [SerializeField] GameObject m_displayPage;
-    [SerializeField] GameObject m_backBtn;
-
     [Header("ShowDisplay/SelectDisplay_Buttons -------------------")]
     [SerializeField] Button m_fullDisplayBtn;
     [SerializeField] Button m_selectDisplayBtn;
@@ -37,19 +32,32 @@ public class DisplaySettingsManager : MonoBehaviour
         m_fullDisplayBtn.onClick.AddListener(FullDisplayBtn);
         m_selectDisplayBtn.onClick.AddListener(SelectDisplayBtn);
 
-        m_displaysAvailable[0].onClick.AddListener(() => ShowSetting(0));
-        m_displaysAvailable[1].onClick.AddListener(() => ShowSetting(1));
-        m_displaysAvailable[2].onClick.AddListener(() => ShowSetting(2));
+        m_displaysAvailable[0].onClick.AddListener(() => ShowDisplaySetting(0));
+        m_displaysAvailable[1].onClick.AddListener(() => ShowDisplaySetting(1));
+        m_displaysAvailable[2].onClick.AddListener(() => ShowDisplaySetting(2));
 
         m_btn4by3[0].onClick.AddListener(() => AdjustResolutionTo4By3(0));
         m_btn4by3[1].onClick.AddListener(() => AdjustResolutionTo4By3(1));
+
+        m_btn16by9.onClick.AddListener(() => AdjustResolutionTo16By9());
 
         m_fullScreenBtns[0].onClick.AddListener(() => SetFullScreenMode(0));
         m_fullScreenBtns[1].onClick.AddListener(() => SetFullScreenMode(1));
         m_fullScreenBtns[2].onClick.AddListener(() => SetFullScreenMode(2));
     }
 
-    void ShowSetting(int btnIndex)
+    void FullDisplayBtn()
+    {
+        ChangeDisplayBtnColors(Color.white);
+        //acivate all screen displays
+    }
+
+    void SelectDisplayBtn()
+    {
+        ChangeDisplayBtnColors(Color.grey);
+    }
+
+    void ShowDisplaySetting(int btnIndex)
     {
         //getting the child object from the btn
         GameObject btnSettingObj = m_displaysAvailable[btnIndex].gameObject.transform.GetChild(0).gameObject;
@@ -68,24 +76,15 @@ public class DisplaySettingsManager : MonoBehaviour
         }
     }
 
+    void AdjustResolutionTo16By9()
+    {
+       
+    }
+
     void SetFullScreenMode(int btnIndex)
     {
 
     }
-
-    #region FullDisplay/SelectDisplay_Option
-    void FullDisplayBtn()
-    {
-        ChangeDisplayBtnColors(Color.white);
-        //acivate all screen displays
-    }
-
-    void SelectDisplayBtn()
-    {
-        ChangeDisplayBtnColors(Color.grey);
-    }
-
-    #endregion
     void ChangeDisplayBtnColors(Color color)
     {
         for (int i = 0; i < m_displaysAvailable.Length; i++)
