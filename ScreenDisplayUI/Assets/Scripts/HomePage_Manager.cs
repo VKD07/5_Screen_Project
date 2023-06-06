@@ -16,7 +16,6 @@ public class HomePage_Manager : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] Button m_displaySettingsBtn;
     [SerializeField] Button m_fileExplorerBtn;
-
     private void Start()
     {
         BtnListener();
@@ -44,6 +43,5 @@ public class HomePage_Manager : MonoBehaviour
             // Handle the selected file path
             Debug.Log("Selected file: " + filePath);
         }
-
     }
 }
