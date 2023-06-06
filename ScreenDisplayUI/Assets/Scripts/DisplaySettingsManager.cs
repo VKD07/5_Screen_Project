@@ -23,21 +23,21 @@ public class DisplaySettingsManager : MonoBehaviour
 
     private void BtnListener()
     {
-        m_fullDisplayBtn.onClick.AddListener(FullDisplayBtn);
-        m_selectDisplayBtn.onClick.AddListener(SelectDisplayBtn);
+        m_fullDisplayBtn.onClick.AddListener(() => SendUDPMessage("All Displays Activated"));
+        m_selectDisplayBtn.onClick.AddListener(ShowSelectDisplayBtns);
 
         m_displaysAvailable[0].onClick.AddListener(() => ShowDisplaySetting(0));
         m_displaysAvailable[1].onClick.AddListener(() => ShowDisplaySetting(1));
         m_displaysAvailable[2].onClick.AddListener(() => ShowDisplaySetting(2));
     }
 
-    void FullDisplayBtn()
+    void SendUDPMessage(string p_message)
     {
-        print("All Displays Activated");
-        UDPSend.GetInstance().SendUDPMsg("All Displays Activated");
+        UDPSend.GetInstance().SendUDPMsg(p_message);
+        print(p_message);
     }
 
-    void SelectDisplayBtn()
+    void ShowSelectDisplayBtns()
     {
         m_selectDisplayBtns.SetActive(!m_selectDisplayBtns.activeSelf);
     }

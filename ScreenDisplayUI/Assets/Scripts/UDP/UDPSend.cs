@@ -34,8 +34,8 @@ public class UDPSend : MonoBehaviour
     public void Start()
     {
         sendingLog = false;
-        m_port = ConfigManager.GetInstance().GetValue("UDP_SEND_PORT");
-        m_sendLogDelay = ConfigManager.GetInstance().GetFloatValue("SEND_LOG_DELAY");
+        //m_port = ConfigManager.GetInstance().GetValue("UDP_SEND_PORT");
+        //m_sendLogDelay = ConfigManager.GetInstance().GetFloatValue("SEND_LOG_DELAY");
         client = new UdpClient();
     }
 
@@ -85,7 +85,7 @@ public class UDPSend : MonoBehaviour
             print(err.ToString());
         }
     }
-
+     
     public void DelayedSendUDP(string p_sendData)
     {
         StartCoroutine(DelayedSendLog(p_sendData));
@@ -98,5 +98,4 @@ public class UDPSend : MonoBehaviour
         SendUDPMsg(p_message);
         sendingLog = false;
     }
-
 }

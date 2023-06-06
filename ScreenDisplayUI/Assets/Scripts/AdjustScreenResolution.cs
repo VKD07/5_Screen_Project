@@ -16,30 +16,42 @@ public class AdjustScreenResolution : MonoBehaviour
     [SerializeField] Button m_middleScreenFullScreen;
     void Start()
     {
-        m_leftScreen4by3.onClick.AddListener(() => AdjustResolution4by3("S1_HALVED"));
-        m_rightScreen4by3.onClick.AddListener(() => AdjustResolution4by3("S2_HALVED"));
-        m_middleScreen16by9.onClick.AddListener(() =>AdjustResolution16by9(" M_HALVED"));
-
-        m_leftScreenFullScreen.onClick.AddListener(() => SetToFullScreen("S1_FULL"));
-        m_middleScreenFullScreen.onClick.AddListener(() => SetToFullScreen("M_FULL"));
-        m_rightScreenFullScreen.onClick.AddListener(() => SetToFullScreen("S2_FULL"));
+        BtnListeners();
     }
 
-    void AdjustResolution4by3(string p_screenName)
+    private void BtnListeners()
     {
-        UDPSend.GetInstance().SendUDPMsg(p_screenName);
-        print(p_screenName);
+        m_leftScreen4by3.onClick.AddListener(() => SendUDPMessage("S1_HALVED"));
+        m_rightScreen4by3.onClick.AddListener(() => SendUDPMessage("S2_HALVED"));
+        m_middleScreen16by9.onClick.AddListener(() => SendUDPMessage("M_HALVED"));
+        m_leftScreenFullScreen.onClick.AddListener(() => SendUDPMessage("S1_FULL"));
+        m_middleScreenFullScreen.onClick.AddListener(() => SendUDPMessage("M_FULL"));
+        m_rightScreenFullScreen.onClick.AddListener(() => SendUDPMessage("S2_FULL"));
     }
 
-    void AdjustResolution16by9(string p_screenName)
+    public void SendUDPMessage(string p_message)
     {
-        UDPSend.GetInstance().SendUDPMsg(p_screenName);
-        print(p_screenName);
+        UDPSend.GetInstance().SendUDPMsg(p_message);
+        print(p_message);
     }
 
-    void SetToFullScreen(string p_screenName)
-    {
-        UDPSend.GetInstance().SendUDPMsg(p_screenName);
-        print(p_screenName);
-    }
+    #region OldCode
+    //void AdjustResolution4by3(string p_message)
+    //{
+    //    UDPSend.GetInstance().SendUDPMsg(p_message);
+    //    print(p_message);
+    //}
+
+    //void AdjustResolution16by9(string p_message)
+    //{
+    //    UDPSend.GetInstance().SendUDPMsg(p_message);
+    //    print(p_message);
+    //}
+
+    //void SetToFullScreen(string p_message)
+    //{
+    //    UDPSend.GetInstance().SendUDPMsg(p_message);
+    //    print(p_message);
+    //}
+    #endregion
 }

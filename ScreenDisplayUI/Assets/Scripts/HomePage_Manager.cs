@@ -16,6 +16,9 @@ public class HomePage_Manager : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] Button m_displaySettingsBtn;
     [SerializeField] Button m_fileExplorerBtn;
+
+    [Header("Which folder?")]
+    [SerializeField] string folderName;
     private void Start()
     {
         BtnListener();
@@ -36,12 +39,19 @@ public class HomePage_Manager : MonoBehaviour
 
     public void FileExplorerBtn()
     {
-        string downloadsPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "/Documents";
-        string filePath = EditorUtility.OpenFilePanel("Open File", downloadsPath, "");
+        string videoPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + $"/{folderName}";
+        string filePath = EditorUtility.OpenFilePanel("Open File", videoPath, "");
         if (!string.IsNullOrEmpty(filePath))
         {
             // Handle the selected file path
             Debug.Log("Selected file: " + filePath);
+            SendUDPMessage($"PLAY:{filePath}");
         }
+    }
+
+    public void SendUDPMessage(string p_message)
+    {
+        UDPSend.GetInstance().SendMessage(p_message);
+        print(p_message);
     }
 }
